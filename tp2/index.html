@@ -1,34 +1,103 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>TP2</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>TP2</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <style>
-          body{
-              background-color: #e9ebee;              
-              font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-              font-size: 16px;
-              margin: 0 auto;
-              border: 0ch;
-              max-width: 800px;              
-          }
-        </style>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    
+
+    <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
+    <link rel="stylesheet" href="formulaire.css">
+    <script src="fich.js"></script>
+</head>
+
+<body>
+    <h1>Saisie d'une fiche "Personne"</h1>
+    <form action="">
+
+
+        <table>
+
+            <tr>
+                <td>
+                    <label for="nom">Nom </label>
+                </td>
+                <td>
+                    <input type="text" name="Nom" id="nom" class="Nom" maxlength="20" minlength="5" />
+                </td>
+            </tr>
+            <br><br>
+            <tr>
+                <td>
+                    <label for="prenom">Prenom </label>
+                </td>
+                <td>
+                    <input type="text" name="Prenom" id="prenom" class="Prenom" maxlength="20" minlength="5" />
+                </td>
+            </tr>
+            <br><br>
+
+            <tr>
+                <td>
+                    <label for="date"> date de naissance </label>
+                </td>
+                <td>
+                    <input type="date" id="date" name="date" class="date" /><br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="adresse">Adresse </label>
+                </td>
+                <td>
+                    <input type="text" name="Adresse" id="adresse" class="Adresse" maxlength="20" minlength="5" /><br><br>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">email</label>
+                </td>
+                <td>
+                    <input type="email" id="email" name="email" class="email" maxlength="20" minlength="5" /><br><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td>
+                        <input type="button" value="Valider" onclick="validation()">
+                    
+                </td>
+            </tr>
+        </table>
+
+
+
+
+    </form>
+
+    <div id="error"> </div> 
+    <div id="resultat">
         
-        <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-        <!--<link rel="sgkkjhgffjhgtylesheet" href="style.css">-->
-        <!--<script src="js/main.js"></script>-->
-    </head>
-    <body>        
-        <h1>tp2</h1>
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
-    </body>
+    <p class="txt">
+
+
+    </p>
+    </div> 
+    
+    <!-- Add your site or application content here -->
+    <p>Hello world! This is HTML5 Boilerplate.</p>
+    <img src="../galilee.png" alt="Logo Galilee" />
+</body>
+
 </html>
