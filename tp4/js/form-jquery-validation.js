@@ -3,32 +3,46 @@ $(document).ready(function () {
     // voir plus : https://www.w3schools.com/js/js_htmldom.asp
     console.log("DOM ready!");
    
-
     // Y mettre le code jQuery pour valider tous les champs du formulaire
     $("#valider").on("click", function (event) {
         event.preventDefault();
         
-        var $nom = $("#name").val();
-        var $prenom = $("#firstname").val();
-        var $date = $("#birth").val();
-        var $adresse = $("#Adresse").val();
-        var $mail = $("#Mail").val();
+        var nom = $("#name").val();
+        var prenom = $("#firstname").val();
+        var date = $("#birth").val();
+        var adresse = $("#adresse").val();
+        var mail = $("#mail").val();
 
-        if($nom.length==0 || $prenom.length==0 || $date.length==0 || $adresse.length==0 || $mail.length==0 )
+        if(nom.length==0 || prenom.length==0 || date.length==0 || adresse.length==0 || mail.length==0 )
         {
             $(".modal-title").text("Message D'erreur !");
-            $(".text").text("Veuillez saisir tous les champs svp.")
-           
-
+            $(".modal-body").text("Veuillez saisir tous les champs svp.")
             $('#myModal').modal("show");
         }
         else{
-            var lien = "http://maps.google.com/maps?q="+$adresse;
-            $(".modal-title").text("Bonjour " +$nom);
-            $(".text").text("Vous etes née le " +$date + " et vous habitez "+ $adresse);
-            $(".image").html('<a href="'+lien+'"><img src="https://maps.googleapis.com/maps/api/staticmap?markers='+$adresse+'&zoom=10&size=400x300&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg"/></a>'); 
-            $('#myModal').modal("show");
+            contactStore.add(nom, prenom, date, adresse, mail);
+            contactList = contactStore.getList();
+            document.querySelector("table tbody").innerHTML = "";
+            for (var index in contactList) {
+              document.querySelector("table tbody").innerHTML =document.querySelector("table tbody").innerHTML +
+              '<td>' +contactList[index].name + 
+              '</td><td>' + contactList[index].firstname+ 
+              '</td><td>'+contactList[index].date+
+              '</td><td>'+contactList[index].adresse+
+              '</td><td>'+contactList[index].mail+'</td>';
         }
- 
-    });
+    }});
+    $( "#name" ).keyup(function() {
+        var nom = $("#name").val();
+        $("#nbrnom").text(nom.length + " car. " );
+
+
+
+      });
+      $( "#firstname" ).keyup(function() {
+        var prenom= $("#firstname").val();
+        $("#nbrprenom").text(prenom.length + " car. " );
+
+      });
+
 });
